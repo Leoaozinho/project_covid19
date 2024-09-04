@@ -1,0 +1,85 @@
+/* styles.css */
+
+/* Corpo e fundo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Para evitar barra de rolagem horizontal */
+}
+
+/* Contêiner principal */
+.container {
+    width: 90%; /* Ajusta a largura do contêiner para 90% da largura da tela */
+    max-width: 1200px; /* Define um limite máximo para a largura */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    padding: 2% 0; /* Adiciona um espaçamento interno em cima e embaixo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+/* Seletores e Botões */
+select, button {
+    width: 80%; /* Ajusta a largura para 80% da largura do contêiner */
+    max-width: 300px; /* Define um limite máximo para a largura */
+    margin: 1% 0;
+    padding: 1%;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Gráfico */
+#chart {
+    width: 100%;
+    height: 60vh; /* Define a altura do gráfico como 60% da altura da viewport */
+    margin-top: 2%;
+}
+
+/* Modo Escuro */
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #444;
+}
+
+.dark-mode button {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode button:hover {
+    background-color: #666;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>COVID-19 Dashboard</h1>
+        <form action="/" method="get">
+            <label for="country">Selecione o país:</label>
+            <select id="country" name="country">
+                <option value="Brazil" {% if selected_country == 'Brazil' %}selected{% endif %}>Brasil</option>
+                <option value="India" {% if selected_country == 'India' %}selected{% endif %}>Índia</option>
+                <option value="Germany" {% if selected_country == 'Germany' %}selected{% endif %}>Alemanha</option>
+                <option value="United Kingdom" {% if selected_country == 'United Kingdom' %}selected{% endif %}>Reino Unido</option>
+                <option value="France" {% if selected_country == 'France' %}selected{% endif %}>França</option>
+                <option value="Italy" {% if selected_country == 'Italy' %}selected{% endif %}>Itália</option>
+                <option value="Spain" {% if selected_country == 'Spain' %}selected{% endif %}>Espanha</option>
+                <option value="Russia" {% if selected_country == 'Russia' %}selected{% endif %}>Rússia</option>
+                <option value="Mexico" {% if selected_country == 'Mexico' %}selected{% endif %}>México</option>
+                <option value="South Africa" {% if selected_country == 'South Africa' %}selected{% endif %}>África do Sul</option>
+            </select>
+
+            <label for="chart_type">Selecione o tipo de gráfico:</label>
+            <select id="chart_type" name="chart_type">
+                <option value="line" {% if selected_chart_type == 'line' %}selected{% endif %}>Linha</option>
+                <option value="bar" {% if selected_chart_type == 'bar' %}selected{% endif %}>Barra</option>
+                <option value="area" {% if selected_chart_type == 'area' %}selected{% endif %}>Área</option>
+                <option value="box" {% if selected_chart_type == 'box' %}selected{% endif %}>Box Plot</option>
+                <option value="scatter" {% if selected_chart_type == 'scatter' %}selected{% endif %}>Dispersão</option>
+                <option value="heatmap" {% if selected_chart_type == 'heatmap' %}selected{% endif %}>Mapa de Calor</option>
+                <option value="histogram" {% if selected_chart_type == 'histogram' %}selected{% endif %}>Histograma</option>
+            </select>
+
+            <button type="submit">Atualizar</button>
+        </form>
+
+        <div id="graph">
+            {{ graph_html|safe }}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
